@@ -1,0 +1,17 @@
+x-common: &common-config
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "100m"
+      max-file: "5"
+
+services:
+  app:
+    <<: *common-config
+    restart: always
+    image: gldywn/phala-cloud-node-starter:latest
+    container_name: app
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock

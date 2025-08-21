@@ -1,0 +1,30 @@
+# Git
+.git
+
+# CI
+.github
+
+# Dependencies
+node_modules
+
+# Build
+dist
+
+# Editor
+.vscode
+.idea
+
+# Environment
+.env*
+!.env.example
+
+# Cache
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# OS
+.DS_Store
+
+# Phala
+.phala*

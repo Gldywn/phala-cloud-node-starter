@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+
+# Environment
+.env*
+!.env.example
+
+# Logs
+logs
+*.log
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Cache
+.eslintcache
+.cache
+*.tsbuildinfo
+
+# Editor
+.idea
+.vscode
+
+# OS
+.DS_Store
+
+# Phala
+.phala*

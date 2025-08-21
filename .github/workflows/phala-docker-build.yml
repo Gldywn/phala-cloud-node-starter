@@ -1,0 +1,31 @@
+name: Phala Docker build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Install Phala CLI
+        run: |
+          npm i -g phala
+      
+      - name: Docker build
+        run: |
+          phala docker build -i phala-cloud-node-starter -t ci-${{ github.sha }}
