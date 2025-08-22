@@ -10,6 +10,7 @@ services:
     <<: *common-config
     restart: always
     image: gldywn/phala-cloud-node-starter:latest
+    pull_policy: always # Forces pulling latest image even if tag `latest` exists in local cache
     container_name: app
     ports:
       - "3000:3000"
